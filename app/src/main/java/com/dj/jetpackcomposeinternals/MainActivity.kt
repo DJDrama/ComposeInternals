@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.dj.jetpackcomposeinternals.basic_layout.HotelBookingScreen
 import com.dj.jetpackcomposeinternals.ui.theme.JetpackComposeInternalsTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,10 +21,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             JetpackComposeInternalsTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    HotelBookingScreen(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
