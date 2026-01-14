@@ -5,13 +5,7 @@ package com.dj.jetpackcomposeinternals.basic_layout
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.automirrored.filled.KeyboardArrowLeft
-import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FabPosition
@@ -29,7 +23,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import com.dj.jetpackcomposeinternals.R
 import com.dj.jetpackcomposeinternals.ui.theme.JetpackComposeInternalsTheme
 import kotlinx.coroutines.launch
 
@@ -48,7 +44,7 @@ fun ScaffoldDemo(modifier: Modifier = Modifier) {
                 navigationIcon = {
                     IconButton(onClick = {}) {
                         Icon(
-                            imageVector = Icons.AutoMirrored.Default.ArrowBack,
+                            painter = painterResource(R.drawable.outline_arrow_back_24),
                             contentDescription = "Go back"
                         )
                     }
@@ -62,7 +58,7 @@ fun ScaffoldDemo(modifier: Modifier = Modifier) {
                 }
             }) {
                 Icon(
-                    imageVector = Icons.Default.Add,
+                    painter = painterResource(R.drawable.outline_add_24),
                     contentDescription = "Add"
                 )
             }
@@ -79,7 +75,7 @@ fun ScaffoldDemo(modifier: Modifier = Modifier) {
                     onClick = {},
                     icon = {
                         Icon(
-                            imageVector = Icons.Default.Star,
+                            painter = painterResource(R.drawable.baseline_star_24),
                             contentDescription = "Star"
                         )
                     },

@@ -18,9 +18,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.LocationOn
-import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.AssistChip
 import androidx.compose.material3.Button
 import androidx.compose.material3.HorizontalDivider
@@ -227,7 +224,7 @@ fun HotelFadedBanner(modifier: Modifier = Modifier) {
                 text = "Los Angeles, California",
                 icon = {
                     Icon(
-                        imageVector = Icons.Default.LocationOn,
+                        painter = painterResource(R.drawable.outline_location_on_24),
                         tint = Color.DarkGray,
                         contentDescription = null
                     )
@@ -236,7 +233,7 @@ fun HotelFadedBanner(modifier: Modifier = Modifier) {
                 text = "4.9 (13k reviews)",
                 icon = {
                     Icon(
-                        imageVector = Icons.Default.Star,
+                        painter = painterResource(R.drawable.baseline_star_24),
                         tint = Color.Yellow,
                         contentDescription = null
                     )
