@@ -7,9 +7,6 @@ import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.FlowRowOverflow
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.KeyboardArrowDown
-import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.AssistChip
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -18,7 +15,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import com.dj.jetpackcomposeinternals.R
 import com.dj.jetpackcomposeinternals.ui.theme.JetpackComposeInternalsTheme
 
 @Composable
@@ -37,7 +36,7 @@ fun FlowLayoutDemo(modifier: Modifier = Modifier) {
                     maxLines.value = Int.MAX_VALUE
                 }) {
                     Icon(
-                        imageVector = Icons.Default.KeyboardArrowDown,
+                        painter = painterResource(R.drawable.outline_keyboard_arrow_down_24),
                         contentDescription = "Expand"
                     )
                 }
@@ -47,7 +46,7 @@ fun FlowLayoutDemo(modifier: Modifier = Modifier) {
                     maxLines.value = 4
                 }) {
                     Icon(
-                        imageVector = Icons.Default.KeyboardArrowUp,
+                        painter = painterResource(R.drawable.outline_keyboard_arrow_up_24),
                         contentDescription = "Shrink"
                     )
                 }

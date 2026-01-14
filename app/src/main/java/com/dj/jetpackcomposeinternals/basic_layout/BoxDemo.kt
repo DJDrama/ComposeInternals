@@ -3,14 +3,9 @@ package com.dj.jetpackcomposeinternals.basic_layout
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -38,19 +33,21 @@ fun BoxDemo(modifier: Modifier = Modifier) {
         Box(
             modifier = Modifier
                 .matchParentSize() // match the size of the parent (200.dp)
-                .background(brush = Brush.verticalGradient(
-                    colors = listOf(
-                        Color.Transparent,
-                        Color.Black
-                    ),
-                ))
+                .background(
+                    brush = Brush.verticalGradient(
+                        colors = listOf(
+                            Color.Transparent,
+                            Color.Black
+                        ),
+                    )
+                )
         )
         IconButton(
             onClick = {},
             modifier = Modifier.align(Alignment.BottomEnd)
         ) {
             Icon(
-                imageVector = Icons.Default.Star,
+                painter = painterResource(R.drawable.baseline_star_24),
                 contentDescription = null,
                 tint = Color.Yellow
             )
