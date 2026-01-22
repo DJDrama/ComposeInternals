@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import com.dj.jetpackcomposeinternals.measurements.SizeModifiersDemo
+import com.dj.jetpackcomposeinternals.measurements.SizePositionModifiersDemo
 import com.dj.jetpackcomposeinternals.ui.theme.JetpackComposeInternalsTheme
 
 class MainActivity : ComponentActivity() {
@@ -17,7 +17,7 @@ class MainActivity : ComponentActivity() {
 //                    modifier = Modifier.fillMaxSize(),
 //                    contentWindowInsets = WindowInsets.safeGestures
 //                ) { innerPadding ->
-                SizeModifiersDemo()
+                SizePositionModifiersDemo()
 //                    SpacingModifierDemo(
 //                        modifier = Modifier
 //                            .padding(innerPadding)
