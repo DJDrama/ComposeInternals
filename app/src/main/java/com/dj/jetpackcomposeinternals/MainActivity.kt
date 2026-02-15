@@ -6,16 +6,16 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.unit.IntOffset
-import com.dj.jetpackcomposeinternals.measurements.LazyMindMap
-import com.dj.jetpackcomposeinternals.measurements.MindMapItem
+import com.dj.jetpackcomposeinternals.side_effects.DisposableEffectDemo
 import com.dj.jetpackcomposeinternals.ui.theme.JetpackComposeInternalsTheme
 
 class MainActivity : ComponentActivity() {
@@ -27,7 +27,22 @@ class MainActivity : ComponentActivity() {
                 Scaffold(
                     modifier = Modifier.fillMaxSize(),
                 ) { innerPadding ->
-                    val mindMapItems = remember {
+                    var toggle by remember {
+                        mutableStateOf(false)
+                    }
+                    if (!toggle)
+                        DisposableEffectDemo()
+                    Button(
+                        onClick = {
+                            toggle = !toggle
+                        }, modifier = Modifier
+                            .padding(innerPadding)
+                            .fillMaxSize()
+                            .wrapContentSize()
+                    ) {
+                        Text("Toggle")
+                    }
+                    /*val mindMapItems = remember {
                         listOf(
                             MindMapItem(
                                 title = "Hello World 1",
@@ -60,7 +75,7 @@ class MainActivity : ComponentActivity() {
                         modifier = Modifier
                             .fillMaxSize()
                             .padding(innerPadding)
-                    )
+                    )*/
                     /* var page by remember {
                          mutableIntStateOf(0)
                      }
