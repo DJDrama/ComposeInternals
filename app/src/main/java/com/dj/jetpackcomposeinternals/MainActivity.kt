@@ -6,17 +6,10 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.wrapContentSize
-import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import com.dj.jetpackcomposeinternals.side_effects.DisposableEffectDemo
 import com.dj.jetpackcomposeinternals.ui.theme.JetpackComposeInternalsTheme
+import com.dj.performance.MyScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,21 +20,24 @@ class MainActivity : ComponentActivity() {
                 Scaffold(
                     modifier = Modifier.fillMaxSize(),
                 ) { innerPadding ->
-                    var toggle by remember {
-                        mutableStateOf(false)
-                    }
-                    if (!toggle)
-                        DisposableEffectDemo()
-                    Button(
-                        onClick = {
-                            toggle = !toggle
-                        }, modifier = Modifier
-                            .padding(innerPadding)
-                            .fillMaxSize()
-                            .wrapContentSize()
-                    ) {
-                        Text("Toggle")
-                    }
+                    MyScreen(modifier = Modifier
+                        .fillMaxSize()
+                        .padding(innerPadding))
+                    /* var toggle by remember {
+                         mutableStateOf(false)
+                     }
+                     if (!toggle)
+                         DisposableEffectDemo()
+                     Button(
+                         onClick = {
+                             toggle = !toggle
+                         }, modifier = Modifier
+                             .padding(innerPadding)
+                             .fillMaxSize()
+                             .wrapContentSize()
+                     ) {
+                         Text("Toggle")
+                     }*/
                     /*val mindMapItems = remember {
                         listOf(
                             MindMapItem(
