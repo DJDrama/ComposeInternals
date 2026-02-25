@@ -1,4 +1,4 @@
-package com.dj.performance
+package com.dj.jetpackcomposeinternals.performance
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize

@@ -8,8 +8,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
+import com.dj.jetpackcomposeinternals.performance.ImageLoading
 import com.dj.jetpackcomposeinternals.ui.theme.JetpackComposeInternalsTheme
-import com.dj.performance.MyScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,9 +20,10 @@ class MainActivity : ComponentActivity() {
                 Scaffold(
                     modifier = Modifier.fillMaxSize(),
                 ) { innerPadding ->
-                    MyScreen(modifier = Modifier
-                        .fillMaxSize()
-                        .padding(innerPadding))
+                    ImageLoading(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .padding(innerPadding))
                     /* var toggle by remember {
                          mutableStateOf(false)
                      }
