@@ -8,7 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
-import com.dj.jetpackcomposeinternals.performance.ImageLoading
+import com.dj.jetpackcomposeinternals.performance.LazyListPerformance
 import com.dj.jetpackcomposeinternals.ui.theme.JetpackComposeInternalsTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,7 +20,7 @@ class MainActivity : ComponentActivity() {
                 Scaffold(
                     modifier = Modifier.fillMaxSize(),
                 ) { innerPadding ->
-                    ImageLoading(
+                    LazyListPerformance(
                         modifier = Modifier
                             .fillMaxSize()
                             .padding(innerPadding))
