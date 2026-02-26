@@ -8,7 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
-import com.dj.jetpackcomposeinternals.performance.KeysCustomLayout
+import com.dj.jetpackcomposeinternals.performance.MovableContent
 import com.dj.jetpackcomposeinternals.ui.theme.JetpackComposeInternalsTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,11 +20,16 @@ class MainActivity : ComponentActivity() {
                 Scaffold(
                     modifier = Modifier.fillMaxSize(),
                 ) { innerPadding ->
-                    KeysCustomLayout(
+                    MovableContent(
                         modifier = Modifier
                             .fillMaxSize()
                             .padding(innerPadding)
                     )
+                    /*KeysCustomLayout(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .padding(innerPadding)
+                    )*/
                     /*  PhotoPickerScreen(compressor = remember {
                           BitmapCompressor(context = applicationContext)
                       }, modifier = Modifier
