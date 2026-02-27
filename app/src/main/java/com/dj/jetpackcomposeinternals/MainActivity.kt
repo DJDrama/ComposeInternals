@@ -8,7 +8,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
-import com.dj.jetpackcomposeinternals.performance.OverdrawDemo
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.testTagsAsResourceId
+import com.dj.jetpackcomposeinternals.performance.LazyListPerformance
 import com.dj.jetpackcomposeinternals.ui.theme.JetpackComposeInternalsTheme
 
 class MainActivity : ComponentActivity() {
@@ -18,13 +20,17 @@ class MainActivity : ComponentActivity() {
         setContent {
             JetpackComposeInternalsTheme {
                 Scaffold(
-                    modifier = Modifier.fillMaxSize(),
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .semantics {
+                            testTagsAsResourceId = true
+                        },
                 ) { innerPadding ->
-                    OverdrawDemo(
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .padding(innerPadding)
-                    )
+                    /* OverdrawDemo(
+                         modifier = Modifier
+                             .fillMaxSize()
+                             .padding(innerPadding)
+                     )*/
                     /*DeferredStateReads(
                         modifier = Modifier
                             .fillMaxSize()
@@ -45,10 +51,11 @@ class MainActivity : ComponentActivity() {
                       }, modifier = Modifier
                           .fillMaxSize()
                           .padding(innerPadding))*/
-                    /*   LazyListPerformance(
+                    LazyListPerformance(
                            modifier = Modifier
                                .fillMaxSize()
-                               .padding(innerPadding))*/
+                               .padding(innerPadding)
+                    )
                     /* var toggle by remember {
                          mutableStateOf(false)
                      }
@@ -139,5 +146,6 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+        reportFullyDrawn()
     }
 }
