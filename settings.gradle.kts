@@ -24,3 +24,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "JetpackComposeInternals"
 include(":app")
+include(":app:baselineprofile")
